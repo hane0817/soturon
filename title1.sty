@@ -1,0 +1,69 @@
+%--------------------------------------------------
+%<@>
+%タイトルのフォーマット
+%--------------------------------------------------
+\def\maketitle{
+\begin{titlepage}
+\null
+\vfil
+\setlength{\shaderule}{0mm}
+\setlength{\linewidth}{157mm}
+\vspace*{-28mm}
+\hspace*{-13mm}
+\begin{shadebox}
+\vspace{22mm}
+\begin{center}
+\begin{huge}
+\SKTitleYear \hspace*{5mm} \SKTitleSemester \hspace*{5mm} \SKTitleClass \\
+\SKTitleSort
+\end{huge}
+\end{center}
+\vspace{35mm}
+\begin{Huge}
+\begin{tabular}{lp{120mm}}
+題目 & \SKTitleTitle \\
+\end{tabular}
+\end{Huge}
+\begin{Large}
+\begin{center}
+\vspace{20mm}
+指導教員 {\SKTitleTeacher}	{\SKTitleTeacherClass} \\
+\vspace{20mm}
+{\SKTitleUniv} {\SKTitleUnivDepart} {\SKTitleDepartment}\\
+\vspace{10mm}
+学籍番号 {\SKTitleID} \\
+\@author	\\
+\vspace{20mm}
+{\SKdate}
+\end{center}
+\end{Large}
+\vspace{5mm}
+\end{shadebox}
+\newpage
+\end{titlepage}}
+%--------------------------------------------------
+%<@>
+%--------------------------------------------------
+\usepackage{fancyhdr02}
+%--------------------------------------------------
+%<@>
+%--------------------------------------------------
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{\thepage}
+\renewcommand{\footrulewidth}{\headrulewidth} 
+\rfoot{立命館大学情報理工学部} 
+%--------------------------------------------------
+%<@>
+%--------------------------------------------------
+\newcommand{\SKchapterSet}[1]{\addcontentsline{toc}{chapter}{#1}\markboth{#1}{#1}}
+\newcommand{\chapterA}[1]{\chapter*{#1}\SKchapterSet{#1}}
+\newcommand{\bibliographyA}[1]{\bibliography{#1}\SKchapterSet{\bibname}}
+%参考文献が2ページ以上になったとき目次のページ番号が最後のものになる可能性あり。未確認。
+%--------------------------------------------------
+%<@scrap>
+%--------------------------------------------------
+%何も設定しないと概要を1ページ目とするが、このフォーマットでは表紙を1ページ目とするようにした。
+%->これは現在効いていない。
+%\setcounter{page}{1}をtitlepageの宣言の中で定義してもどこで定義しても無効
+%--------------------------------------------------
