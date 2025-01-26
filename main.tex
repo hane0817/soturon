@@ -151,6 +151,14 @@ TS をパケットに付与することが求められ，ユーザ端末から�
 は，要求パケットに付与された TS の値が小さい (早い) 順に，
 チケット購入者を決定する．
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\linewidth]{data/soturon_teianshuhou.eps}
+  \vspace{0mm}
+  \caption{TSを用いた公平なオンラインチケット販売方式}
+  \label{fig:teianshuhou}
+\end{figure}
+
 \section{パケットのIPアドレスを，サーバリストと一致するかの判定}
 提案方式では，TS付与処理を行うルータが，
 パケットの宛先アドレスがチケット販売サーバのアドレスであるかを判定する．
@@ -173,14 +181,6 @@ TSを付与することによって実現する．またTS付与処理は，
 \section{時刻同期}
 時刻同期は，TS付与処理を行うノードが，正確な時刻を取得し，TS付与処理を行うために必要である．
 今回の提案方式では，P4スイッチからローカルPCの時刻を取得することによって，全てのP4スイッチの時刻が同期される．
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=1.0\linewidth]{data/soturon_teianshuhou.eps}
-  \vspace{0mm}
-  \caption{TSを用いた公平なオンラインチケット販売方式}
-  \label{fig:teianshuhou}
-\end{figure}
 
 
 \chapter{P4スイッチによる提案方式の実装}
